@@ -1,10 +1,17 @@
 package eu.tricht.gamesense.model
 
 data class SongInformation(
-    val fullSongName: String
+    val artist: String,
+    val title: String,
+    val imageSrc: String,
+    val isPaused: Boolean,
+    val songDuration: Int,
+    val elapsedSeconds: Int,
+    val url: String
 ) {
-    private val artistText = ScrollingText(fullSongName.split(" - ")[0])
-    private val songText = ScrollingText(fullSongName.split(" - ")[1])
+    private val artistText = ScrollingText(artist)
+    private val songText = ScrollingText(title)
+    
     fun artist() = artistText.text
     fun song() = songText.text
 }
